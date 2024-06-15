@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dkwsworrni4kx"
+path="res://.godot/imported/body_medium_1.obj-31bc3426c412e070438e9dc8ca3bcec2.mesh"
+
+[deps]
+
+files=["res://.godot/imported/body_medium_1.obj-31bc3426c412e070438e9dc8ca3bcec2.mesh"]
+
+source_file="res://models/actors/humans/body_medium_1.obj"
+dest_files=["res://.godot/imported/body_medium_1.obj-31bc3426c412e070438e9dc8ca3bcec2.mesh", "res://.godot/imported/body_medium_1.obj-31bc3426c412e070438e9dc8ca3bcec2.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

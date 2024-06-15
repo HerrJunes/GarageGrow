@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bued3no8pyi7n"]
+
+[ext_resource type="ArrayMesh" uid="uid://dkwsworrni4kx" path="res://models/actors/humans/body_medium_1.obj" id="1_qbkku"]
+[ext_resource type="Script" path="res://scenes/actors/player/player.gd" id="1_r4dna"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mcxhw"]
+radius = 0.25
+height = 1.0
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_r4dna")
+
+[node name="Neck" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925512, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Neck"]
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.367894, 0)
+mesh = ExtResource("1_qbkku")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.520959, 0)
+shape = SubResource("CapsuleShape3D_mcxhw")
