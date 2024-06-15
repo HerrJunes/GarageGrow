@@ -3,16 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://bued3no8pyi7n" path="res://scenes/actors/player/player.tscn" id="1_baaon"]
 [ext_resource type="Script" path="res://scenes/main/Time.gd" id="1_sqgsi"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pu0i3"]
-albedo_color = Color(0.201788, 0.155384, 0.0461729, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_355jh"]
-material = SubResource("StandardMaterial3D_pu0i3")
-size = Vector2(50, 50)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_mlt1c"]
-data = PackedVector3Array(25, 0, 25, -25, 0, 25, 25, 0, -25, -25, 0, 25, -25, 0, -25, 25, 0, -25)
-
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ac1qe"]
 sky_top_color = Color(0.174935, 0.677183, 1, 1)
 sky_horizon_color = Color(0.750281, 0.915982, 1, 1)
@@ -23,6 +13,16 @@ sky_material = SubResource("ProceduralSkyMaterial_ac1qe")
 [sub_resource type="Environment" id="Environment_6lsqx"]
 background_mode = 2
 sky = SubResource("Sky_jybs5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pu0i3"]
+albedo_color = Color(0.201788, 0.155384, 0.0461729, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_355jh"]
+material = SubResource("StandardMaterial3D_pu0i3")
+size = Vector2(50, 50)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_mlt1c"]
+data = PackedVector3Array(25, 0, 25, -25, 0, 25, 25, 0, -25, -25, 0, 25, -25, 0, -25, 25, 0, -25)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wk4eq"]
 
@@ -37,6 +37,9 @@ SUN = NodePath("../Sun")
 GUI = NodePath("../CanvasLayer/GUI")
 
 [node name="Sun" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Sun"]
+environment = SubResource("Environment_6lsqx")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Sun"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -50, 0)
@@ -55,9 +58,6 @@ shape = SubResource("ConcavePolygonShape3D_mlt1c")
 [node name="Actors" type="Node" parent="."]
 
 [node name="Player" parent="Actors" instance=ExtResource("1_baaon")]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_6lsqx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41623, -7.72973)
